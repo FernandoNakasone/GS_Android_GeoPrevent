@@ -78,7 +78,7 @@ fun RegiaoCard(
                     onClick = onMaisDetalhesClick
                 ) {
                     Text(
-                        "Mais detalhes",
+                        "Registros",
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold
                     )

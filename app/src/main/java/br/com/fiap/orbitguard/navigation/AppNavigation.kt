@@ -6,15 +6,13 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import br.com.fiap.orbitguard.repository.getAllRegioes
-import br.com.fiap.orbitguard.ui.components.RegiaoCard
 import br.com.fiap.orbitguard.ui.screens.comoFunciona.ComoFuncionaScreen
 import br.com.fiap.orbitguard.ui.screens.home.HomeScreen
 import br.com.fiap.orbitguard.ui.screens.intro.IntroScreen
 import br.com.fiap.orbitguard.ui.screens.splash.SplashScreen
-import br.com.fiap.orbitguard.ui.screens.comoPrepara.ComoPrepararScreen
-import br.com.fiap.orbitguard.ui.screens.maisDetalhes.MaisDetalhesScreen
+import br.com.fiap.orbitguard.ui.screens.comoPreparar.ComoPrepararScreen
 import br.com.fiap.orbitguard.ui.screens.monitorar.MonitorarScreen
-import androidx.compose.material3.Text
+import br.com.fiap.orbitguard.ui.screens.registros.RegistroScreen
 
 @Composable
 fun AppNavigation(){
@@ -96,7 +94,7 @@ fun AppNavigation(){
             }
 
             if (regiao != null) {
-                MaisDetalhesScreen(
+                RegistroScreen(
                     regiao = regiao,
                     onBackClick = {
                         navController.popBackStack()

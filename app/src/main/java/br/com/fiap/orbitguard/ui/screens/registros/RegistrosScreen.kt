@@ -1,6 +1,5 @@
-package br.com.fiap.orbitguard.ui.screens.maisDetalhes
+package br.com.fiap.orbitguard.ui.screens.registros
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -8,11 +7,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -23,7 +18,7 @@ import br.com.fiap.orbitguard.ui.components.OrbitguardTopBar
 import br.com.fiap.orbitguard.ui.components.RegistroCard
 
 @Composable
-fun MaisDetalhesScreen(
+fun RegistroScreen(
     regiao: Regiao,
     onBackClick: () -> Unit,
 ){

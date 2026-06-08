@@ -1,8 +1,6 @@
-package br.com.fiap.orbitguard.ui.screens.comoPrepara
+package br.com.fiap.orbitguard.ui.screens.comoPreparar
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -23,8 +21,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.unit.sp
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.ui.text.font.FontWeight
 
