@@ -19,3 +19,8 @@ object ComoPrepararRoute
 
 @Serializable
 object MonitorarRoute
+
+@Serializable
+data class MaisDetalhesRoute(
+    val regiaoId: Int
+)

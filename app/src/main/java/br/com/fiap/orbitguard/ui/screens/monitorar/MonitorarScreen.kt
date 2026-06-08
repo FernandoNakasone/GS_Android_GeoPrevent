@@ -3,7 +3,9 @@ package br.com.fiap.orbitguard.ui.screens.monitorar
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -12,20 +14,27 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import br.com.fiap.orbitguard.model.Regiao
 import br.com.fiap.orbitguard.repository.getAllRegioes
 import br.com.fiap.orbitguard.ui.components.OrbitguardTopBar
+import br.com.fiap.orbitguard.ui.components.RegiaoCard
 import br.com.fiap.orbitguard.ui.components.RegiaoMiniCard
 
 @Composable
 fun MonitorarScreen(
-    onBackClick: () -> Unit
-){
-    val regiaoState by remember { mutableStateOf(getAllRegioes()) }
+    onBackClick: () -> Unit,
+    onMaisDetalhesClick: (Int) -> Unit
 
-    Scaffold (
+) {
+    val regiaoState by remember { mutableStateOf(getAllRegioes()) }
+    var regiaoSelecionada by remember { mutableStateOf<Regiao?>(null) }
+    val regiao = regiaoSelecionada
+
+    Scaffold(
         topBar = {
             OrbitguardTopBar(
                 title = "Monitoramento",
@@ -47,12 +56,28 @@ fun MonitorarScreen(
                 contentPadding = PaddingValues(horizontal = 16.dp),
                 horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                items(regiaoState){
-                    RegiaoMiniCard(it)
+                items(regiaoState) { regiao ->
+                    RegiaoMiniCard(
+                        regiao = regiao,
+                        onClick = {
+                            regiaoSelecionada = regiao
+                        }
+                    )
                 }
+            }
+
+            Spacer(modifier = Modifier.height(32.dp))
+
+            if(regiao != null){
+                RegiaoCard(
+                    regiao = regiao,
+                    onMaisDetalhesClick = {
+                        onMaisDetalhesClick(regiao.id)
+                    }
+                )
             }
 
         }
 
     }
-    }
+}

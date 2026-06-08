@@ -4,12 +4,17 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
+import br.com.fiap.orbitguard.repository.getAllRegioes
+import br.com.fiap.orbitguard.ui.components.RegiaoCard
 import br.com.fiap.orbitguard.ui.screens.comoFunciona.ComoFuncionaScreen
 import br.com.fiap.orbitguard.ui.screens.home.HomeScreen
 import br.com.fiap.orbitguard.ui.screens.intro.IntroScreen
 import br.com.fiap.orbitguard.ui.screens.splash.SplashScreen
 import br.com.fiap.orbitguard.ui.screens.comoPrepara.ComoPrepararScreen
+import br.com.fiap.orbitguard.ui.screens.maisDetalhes.MaisDetalhesScreen
 import br.com.fiap.orbitguard.ui.screens.monitorar.MonitorarScreen
+import androidx.compose.material3.Text
 
 @Composable
 fun AppNavigation(){
@@ -74,11 +79,30 @@ fun AppNavigation(){
         }
 
         composable<MonitorarRoute> {
-            MonitorarScreen (
+            MonitorarScreen(
                 onBackClick = {
                     navController.popBackStack()
+                },
+                onMaisDetalhesClick = { regiaoId ->
+                    navController.navigate(MaisDetalhesRoute(regiaoId))
                 }
             )
+        }
+
+        composable<MaisDetalhesRoute> { backStackEntry ->
+            val args = backStackEntry.toRoute<MaisDetalhesRoute>()
+            val regiao = getAllRegioes().find {
+                it.id == args.regiaoId
+            }
+
+            if (regiao != null) {
+                MaisDetalhesScreen(
+                    regiao = regiao,
+                    onBackClick = {
+                        navController.popBackStack()
+                    }
+                )
+            }
         }
 
     }

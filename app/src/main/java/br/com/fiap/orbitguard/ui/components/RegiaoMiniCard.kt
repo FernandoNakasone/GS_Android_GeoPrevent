@@ -23,11 +23,14 @@ import br.com.fiap.orbitguard.model.Regiao
 @Composable
 fun RegiaoMiniCard(
     regiao: Regiao,
+    onClick: () -> Unit
 ){
     Card(
         shape = CircleShape,
         modifier = Modifier.size(100.dp)
-        ,
+            .clickable {
+                onClick()
+            },
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {
         Column(
