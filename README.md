@@ -1,6 +1,6 @@
 ## Fluxo
 
-O aplicativo inicia na tela SplashScreen após isso é automaticamente redirecionada para tela IntroScreen onde possui duas opções uma de voltar que fecha o aplicativo e uma de avançar que leva para HomeScreen,
+O aplicativo inicia na tela SplashScreen após isso é automaticamente redirecionada para tela IntroScreen onde possui duas opções uma de voltar que não faz nada e uma de avançar que leva para HomeScreen,
 a tela HomeScreen é a tela central aonde você pode acessar 3 outras telas,
 a ComoFuncionaScreen que explica como o aplicativo fucniona,
 a ComoPrepararScreen que tem uma checklist de items que você precisa ter pra caso algum desastre acontecer você esteja preparado para diminuir os danos, 
@@ -9,7 +9,7 @@ nesse card tem um botão de "Registros", esse botão leva para tela onde aparece
 
 <br>
 
-SplashScreen -> IntroScreen (duas opções) -> botão "voltar"  fecha o app <br>
+SplashScreen -> IntroScreen (duas opções) -> botão "voltar"  não faz nada<br>
                               ->  botão "Avançar" -> HomeScreen  
 <br>
 HomeScreen(três opções) -> botão "Como funciona" -> ComoFuncionaScreen <br>
