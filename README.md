@@ -73,7 +73,7 @@ ComoPrepararScreen -> HomeScreen <br>
 
 <br>
 
-<img width = "420px" height = "900px" src="app/src/main/res/drawable/telas/monitoramento1.jpeg>
+<img width = "420px" height = "900px" src="app/src/main/res/drawable/telas/monitoramento1.jpeg">
 <img width = "420px" height = "900px" src="app/src/main/res/drawable/telas/monitoramento2.jpeg">
 <img width = "420px" height = "900px" src="app/src/main/res/drawable/telas/monitoramento+card.jpeg">
 
