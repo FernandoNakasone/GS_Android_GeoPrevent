@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "br.com.fiap.orbitguard"
+    namespace = "br.com.fiap.geoPrevent"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "br.com.fiap.orbitguard"
+        applicationId = "br.com.fiap.geoPrevent"
         minSdk = 24
         //noinspection OldTargetApi
         targetSdk = 35

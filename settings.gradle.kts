@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "OrbitGuard"
+rootProject.name = "GeoPrevent"
 include(":app")
